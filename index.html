@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Downloader</title>
+</head>
+<body>
+  <h1>YouTube Downloader</h1>
+  <input type="text" id="url" placeholder="Enter YouTube URL" />
+  <br />
+  <button onclick="downloadVideo()">Download Video</button>
+  <button onclick="downloadAudio()">Download Audio</button>
+
+  <script>
+    async function downloadVideo() {
+      const url = document.getElementById('url').value;
+      window.open(`http://localhost:3000/download/video?url=${encodeURIComponent(url)}`);
+    }
+
+    async function downloadAudio() {
+      const url = document.getElementById('url').value;
+      window.open(`http://localhost:3000/download/audio?url=${encodeURIComponent(url)}`);
+    }
+  </script>
+</body>
+</html>
